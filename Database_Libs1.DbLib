@@ -1,0 +1,148 @@
+[OutputDatabaseLinkFile]
+Version=1.1
+[DatabaseLinks]
+ConnectionString=Provider=MSDASQL.1;Persist Security Info=False;Data Source=partsdb
+AddMode=3
+RemoveMode=1
+UpdateMode=2
+ViewMode=0
+LeftQuote=[
+RightQuote=]
+QuoteTableNames=1
+UseTableSchemaName=0
+DefaultColumnType=VARCHAR(255)
+LibraryDatabaseType=
+LibraryDatabasePath=
+DatabasePathRelative=0
+TopPanelCollapsed=0
+LibrarySearchPath=
+OrcadMultiValueDelimiter=,
+SearchSubDirectories=0
+SchemaName=ALTIUM
+LastFocusedTable=resistors.csv
+[Table1]
+SchemaName=
+TableName=bjt.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Index0=60|Library Ref0=77|Library Path0=87|Footprint Ref0=92|Footprint Path0=98|Description0=82|Manufacturer 10=102|Manufacturer Part Number 10=169|Location0=67|LCSC0=48|Digikey0=61|Mouser0=62|TME0=44|Ic0=31|Vce0=41|hfe0=40|NoName0=67
+[Table2]
+SchemaName=
+TableName=capacitors.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Index0=64|Library Ref0=77|Library Path0=87|Footprint Ref0=92|Footprint Path0=98|Description0=82|Manufacturer 10=102|Manufacturer Part Number 10=169|Location0=67|LCSC0=48|Digikey0=61|Mouser0=62|TME0=44|Value0=52|Voltage0=63|Dielectric0=70|NoName0=67
+[Table3]
+SchemaName=
+TableName=ic.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Index0=54|Library Ref0=77|Library Path0=87|Footprint Ref0=92|Footprint Path0=98|Description0=82|Manufacturer 10=102|Manufacturer Part Number 10=169|Location0=67|LCSC0=48|Digikey0=61|Mouser0=62|TME0=44|Function0=69|Package0=65|NoName0=67|NoName_10=78
+[Table4]
+SchemaName=
+TableName=mosfet.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Index0=69|Library Ref0=77|Library Path0=87|Footprint Ref0=92|Footprint Path0=98|Description0=82|Manufacturer 10=102|Manufacturer Part Number 10=169|Location0=67|LCSC0=48|Digikey0=61|Mouser0=62|TME0=44|Id0=33|Vds0=42|Vgs(th)0=59|NoName0=67
+[Table5]
+SchemaName=
+TableName=partsdb.csv
+Enabled=True
+UserWhere=0
+UserWhereText=[INDEX] = '{INDEX}'
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=54|DESCRIPTION0=91|MANUFACTURER 10=118|LOCATION0=76|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|VALUE0=56|TOLERANCE0=83|POWER0=62|MANUFACTURER PART NUMBER 10=195|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110
+[Table6]
+SchemaName=
+TableName=resistors.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=Index0=63|Library Ref0=77|Library Path0=87|Footprint Ref0=92|Footprint Path0=98|Description0=82|Manufacturer 10=102|Manufacturer Part Number 10=169|Location0=67|LCSC0=48|Digikey0=61|Mouser0=62|TME0=44|Value0=52|Tolerance0=72|Power0=55|Tempco0=62
+[FieldMap1]
+Options=FieldName=bjt.csv.Index|TableNameOnly=bjt.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap2]
+Options=FieldName=bjt.csv.Library Ref|TableNameOnly=bjt.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap3]
+Options=FieldName=bjt.csv.Library Path|TableNameOnly=bjt.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap4]
+Options=FieldName=bjt.csv.Footprint Ref|TableNameOnly=bjt.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap5]
+Options=FieldName=bjt.csv.Footprint Path|TableNameOnly=bjt.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap6]
+Options=FieldName=bjt.csv.Description|TableNameOnly=bjt.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap7]
+Options=FieldName=capacitors.csv.Index|TableNameOnly=capacitors.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap8]
+Options=FieldName=capacitors.csv.Library Ref|TableNameOnly=capacitors.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap9]
+Options=FieldName=capacitors.csv.Library Path|TableNameOnly=capacitors.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap10]
+Options=FieldName=capacitors.csv.Footprint Ref|TableNameOnly=capacitors.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap11]
+Options=FieldName=capacitors.csv.Footprint Path|TableNameOnly=capacitors.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap12]
+Options=FieldName=capacitors.csv.Description|TableNameOnly=capacitors.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap13]
+Options=FieldName=ic.csv.Index|TableNameOnly=ic.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap14]
+Options=FieldName=ic.csv.Library Ref|TableNameOnly=ic.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap15]
+Options=FieldName=ic.csv.Library Path|TableNameOnly=ic.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap16]
+Options=FieldName=ic.csv.Footprint Ref|TableNameOnly=ic.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap17]
+Options=FieldName=ic.csv.Footprint Path|TableNameOnly=ic.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap18]
+Options=FieldName=ic.csv.Description|TableNameOnly=ic.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap19]
+Options=FieldName=mosfet.csv.Index|TableNameOnly=mosfet.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap20]
+Options=FieldName=mosfet.csv.Library Ref|TableNameOnly=mosfet.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap21]
+Options=FieldName=mosfet.csv.Library Path|TableNameOnly=mosfet.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap22]
+Options=FieldName=mosfet.csv.Footprint Ref|TableNameOnly=mosfet.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap23]
+Options=FieldName=mosfet.csv.Footprint Path|TableNameOnly=mosfet.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap24]
+Options=FieldName=mosfet.csv.Description|TableNameOnly=mosfet.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap25]
+Options=FieldName=partsdb.csv.INDEX|TableNameOnly=partsdb.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap26]
+Options=FieldName=partsdb.csv.DESCRIPTION|TableNameOnly=partsdb.csv|FieldNameOnly=DESCRIPTION|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=2
+[FieldMap27]
+Options=FieldName=partsdb.csv.LIBRARY REF|TableNameOnly=partsdb.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap28]
+Options=FieldName=partsdb.csv.LIBRARY PATH|TableNameOnly=partsdb.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap29]
+Options=FieldName=partsdb.csv.FOOTPRINT REF|TableNameOnly=partsdb.csv|FieldNameOnly=FOOTPRINT REF|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap30]
+Options=FieldName=partsdb.csv.FOOTPRINT PATH|TableNameOnly=partsdb.csv|FieldNameOnly=FOOTPRINT PATH|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap31]
+Options=FieldName=resistors.csv.Index|TableNameOnly=resistors.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap32]
+Options=FieldName=resistors.csv.Library Ref|TableNameOnly=resistors.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap33]
+Options=FieldName=resistors.csv.Library Path|TableNameOnly=resistors.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap34]
+Options=FieldName=resistors.csv.Footprint Ref|TableNameOnly=resistors.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap35]
+Options=FieldName=resistors.csv.Footprint Path|TableNameOnly=resistors.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap36]
+Options=FieldName=resistors.csv.Description|TableNameOnly=resistors.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
