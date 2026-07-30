@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSV Editor</title>
+<style>
+  /* ── Tokens ─────────────────────────────────────────── */
+  :root {
+    --bg:        #0f1117;
+    --surface:   #181b24;
+    --panel:     #1e2130;
+    --border:    #2a2f42;
+    --accent:    #4f8ef7;
+    --accent-dk: #3a72d8;
+    --danger:    #e05c5c;
+    --success:   #3ecf8e;
+    --text:      #e2e6f0;
+    --text-muted:#7a82a0;
+    --text-dim:  #3d4460;
+    --guid-col:  #252a3a;
+    --header-bg: #151720;
+    --row-hover: #1c2035;
+    --row-alt:   #181c2b;
+    --cell-focus:#4f8ef720;
+    --mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
+    --sans: 'Inter', system-ui, sans-serif;
+    --radius: 6px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  /* ── Brand banner ────────────────────────────────────── */
+  #brandBanner {
+    height: 64px;
+    flex-shrink: 0;
+    background-color: #000;
+    background-image: none;       /* set by JS if backdrop.PNG found */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    padding: 0 22px;
+    position: relative;
+    z-index: 11;
+    border-bottom: 1px solid #333;
+  }
+  #brandBanner::after {
+    /* subtle dark veil so text always reads on the image */
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.25) 100%);
+    pointer-events: none;
+  }
+  #brandTitle {
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #CFB53B;   /* old gold */
+    letter-spacing: 0.06em;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.8);
+    white-space: nowrap;
+  }
+
+  /* ── Top bar (under the banner) ─────────────────────── */
+  header {
+    height: 40px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    gap: 12px;
+    flex-shrink: 0;
+    z-index: 10;
+  }
+  header .folder-path {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 10px;
+    max-width: 340px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  header .spacer { flex: 1; }
+  header .status {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-muted);
+    padding: 3px 10px;
+    background: var(--panel);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    min-width: 130px;
+    text-align: center;
+    transition: color 0.2s;
+  }
+  header .status.saved   { color: var(--success); }
+  header .status.unsaved { color: #f9a825; }
+
+  /* ── Layout ──────────────────────────────────────────── */
+  .workspace { display: flex; flex: 1; overflow: hidden; }
+
+  /* ── Sidebar ─────────────────────────────────────────── */
+  .sidebar {
+    width: 220px;
+    flex-shrink: 0;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .sidebar-header {
+    padding: 14px 16px 10px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .sidebar-actions {
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+  }
+
+  /* Open Folder button — the primary action */
+  .btn-open-folder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 9px 12px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--sans);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .btn-open-folder:hover { background: var(--accent-dk); }
+  .btn-open-folder:active { transform: scale(0.97); }
+
+  /* Fallback individual-file picker */
+  .btn-add-files {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 6px 12px;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    font-family: var(--sans);
+    font-size: 11.5px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    position: relative;
+  }
+  .btn-add-files:hover { background: var(--panel); color: var(--text); }
+  .btn-add-files input[type=file] {
+    position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%;
+  }
+
+  /* FSA not supported warning */
+  .fsa-warning {
+    font-size: 11px;
+    color: #f9a825;
+    line-height: 1.5;
+    padding: 6px 4px 0;
+    display: none;
+  }
+
+  .file-list { flex: 1; overflow-y: auto; padding: 6px 0; }
+  .file-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 16px;
+    cursor: pointer;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    transition: background 0.1s, color 0.15s;
+    position: relative;
+    user-select: none;
+  }
+  .file-item:hover { background: var(--panel); color: var(--text); }
+  .file-item.active { background: var(--panel); color: var(--accent); }
+  .file-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 2px;
+    background: var(--accent);
+    border-radius: 0 2px 2px 0;
+  }
+  .file-item .file-icon { font-size: 14px; flex-shrink: 0; }
+  .file-item .file-name {
+    font-family: var(--mono);
+    font-size: 11.5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .file-item .unsaved-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: #f9a825;
+    margin-left: auto;
+    flex-shrink: 0;
+    display: none;
+  }
+  .file-item.dirty .unsaved-dot { display: block; }
+  .empty-sidebar {
+    padding: 20px 16px;
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  /* ── Main area ───────────────────────────────────────── */
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; background: var(--bg); }
+
+  .toolbar {
+    height: 46px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    gap: 10px;
+    flex-shrink: 0;
+  }
+  .toolbar .file-title { font-family: var(--mono); font-size: 13px; color: var(--text); font-weight: 500; }
+  .toolbar .file-title .ext { color: var(--text-muted); }
+  .toolbar .row-count {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--text-dim);
+    background: var(--panel);
+    padding: 2px 8px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .toolbar .spacer { flex: 1; }
+
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 14px;
+    border-radius: var(--radius);
+    font-size: 12.5px;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: background 0.15s, transform 0.1s, opacity 0.15s;
+    white-space: nowrap;
+    font-family: var(--sans);
+  }
+  .btn:active { transform: scale(0.97); }
+  .btn:disabled { opacity: 0.4; cursor: not-allowed; }
+  .btn-ghost   { background: transparent; color: var(--text-muted); border-color: var(--border); }
+  .btn-ghost:hover:not(:disabled) { background: var(--panel); color: var(--text); }
+  .btn-danger  { background: transparent; color: var(--danger); border-color: #e05c5c44; }
+  .btn-danger:hover:not(:disabled) { background: #e05c5c18; }
+  .btn-success { background: #3ecf8e22; color: var(--success); border-color: #3ecf8e44; }
+  .btn-success:hover:not(:disabled) { background: #3ecf8e33; }
+
+  /* ── Grid ────────────────────────────────────────────── */
+  .grid-wrapper { flex: 1; overflow: auto; position: relative; }
+
+  table {
+    border-collapse: collapse;
+    width: max-content;
+    min-width: 100%;
+    font-family: var(--mono);
+    font-size: 12.5px;
+  }
+
+  thead th:first-child,
+  tbody td:first-child {
+    position: sticky; left: 0; z-index: 3;
+    min-width: 44px; max-width: 44px; width: 44px;
+  }
+  thead th:first-child { z-index: 5; }
+  thead { position: sticky; top: 0; z-index: 4; }
+  thead tr { background: var(--header-bg); }
+  thead th {
+    padding: 9px 12px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    white-space: nowrap;
+    background: var(--header-bg);
+    user-select: none;
+  }
+  thead th.row-num-header { color: var(--text-dim); font-size: 10px; text-align: center; }
+  thead th.guid-header    { color: #4f8ef799; }
+
+  tbody tr { border-bottom: 1px solid var(--border); transition: background 0.08s; }
+  tbody tr:nth-child(even) { background: var(--row-alt); }
+  tbody tr:hover { background: var(--row-hover); }
+
+  tbody td.row-num {
+    text-align: center; color: var(--text-dim); font-size: 11px;
+    padding: 0; background: var(--header-bg);
+    border-right: 1px solid var(--border); position: relative;
+  }
+  tbody tr:hover td.row-num { background: #1a1f30; }
+  .row-num-inner {
+    display: flex; align-items: center; justify-content: center;
+    height: 36px; position: relative;
+  }
+  .row-num-inner .row-number { transition: opacity 0.15s; }
+  .row-num-inner .delete-row-btn {
+    position: absolute; inset: 0;
+    display: flex; align-items: center; justify-content: center;
+    opacity: 0; cursor: pointer; color: var(--danger);
+    font-size: 13px; transition: opacity 0.15s;
+    background: none; border: none; width: 100%;
+  }
+  tbody tr:hover .row-num-inner .row-number      { opacity: 0; }
+  tbody tr:hover .row-num-inner .delete-row-btn  { opacity: 1; }
+
+  tbody td { padding: 0; border-right: 1px solid var(--border); max-width: 300px; min-width: 100px; }
+  tbody td.guid-cell { background: var(--guid-col); min-width: 260px; max-width: 260px; }
+  tbody tr:hover td.guid-cell { background: #1e2338; }
+
+  .cell-input {
+    width: 100%; height: 36px; padding: 0 12px;
+    background: transparent; border: none; outline: none;
+    color: var(--text); font-family: var(--mono);
+    font-size: 12.5px; transition: background 0.1s; display: block;
+  }
+  .cell-input:focus { background: var(--cell-focus); box-shadow: inset 0 0 0 1.5px var(--accent); }
+  .guid-cell .cell-input { color: var(--text-muted); font-size: 11px; }
+
+  /* ── Empty state ─────────────────────────────────────── */
+  .empty-state {
+    flex: 1; display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px; color: var(--text-dim); padding: 40px; text-align: center;
+  }
+  .empty-state .empty-icon { font-size: 40px; opacity: 0.5; }
+  .empty-state h2 { font-size: 16px; color: var(--text-muted); font-weight: 500; }
+  .empty-state p  { font-size: 13px; line-height: 1.6; max-width: 340px; }
+
+  /* ── Scrollbar ───────────────────────────────────────── */
+  ::-webkit-scrollbar { width: 7px; height: 7px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: #3a4060; }
+
+  /* ── Toast ───────────────────────────────────────────── */
+  #toast {
+    position: fixed; bottom: 24px; right: 24px;
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text); padding: 10px 18px;
+    border-radius: var(--radius); font-size: 13px;
+    box-shadow: 0 8px 24px #00000066;
+    opacity: 0; transform: translateY(8px);
+    transition: opacity 0.2s, transform 0.2s;
+    pointer-events: none; z-index: 999;
+    display: flex; align-items: center; gap: 8px;
+  }
+  #toast.show    { opacity: 1; transform: translateY(0); }
+  #toast.success { border-color: #3ecf8e44; }
+  #toast.error   { border-color: #e05c5c44; }
+</style>
+</head>
+<body>
+
+<div id="brandBanner">
+  <span id="brandTitle">Altium CSV Librarian</span>
+</div>
+
+<header>
+  <div class="folder-path" id="folderPath">No folder open</div>
+  <div class="spacer"></div>
+  <div class="status" id="globalStatus">No file open</div>
+</header>
+
+<div class="workspace">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="sidebar-header">CSV Files</div>
+    <div class="sidebar-actions">
+      <button class="btn-open-folder" id="btnOpenFolder">📂 Open Folder</button>
+      <label class="btn-add-files">
+        ＋ Add individual files
+        <input type="file" id="fileInput" accept=".csv" multiple>
+      </label>
+      <div class="fsa-warning" id="fsaWarning">
+        ⚠ Your browser doesn't support the Folder API. Use Chrome or Edge for auto-save to disk.
+      </div>
+    </div>
+    <div class="file-list" id="fileList">
+      <div class="empty-sidebar">Open a folder to load all CSVs automatically.</div>
+    </div>
+  </aside>
+
+  <!-- Main -->
+  <div class="main">
+    <div class="toolbar" id="toolbar">
+      <div id="emptyToolbar" style="color:var(--text-dim);font-size:13px;">← Open a folder to get started</div>
+      <div id="activeToolbar" style="display:none; width:100%; align-items:center; gap:10px;">
+        <span class="file-title" id="toolbarTitle"></span>
+        <span class="row-count" id="rowCount"></span>
+        <div class="spacer"></div>
+        <button class="btn btn-ghost" id="btnAddRow">＋ Add row</button>
+        <button class="btn btn-success" id="btnSave">↓ Save</button>
+        <button class="btn btn-danger" id="btnRemove">✕ Remove</button>
+      </div>
+    </div>
+
+    <div id="emptyState" class="empty-state">
+      <div class="empty-icon">🗂</div>
+      <h2>No file selected</h2>
+      <p>Click <strong>Open Folder</strong> in the sidebar. All CSV files in the folder will load automatically and save back to disk.</p>
+    </div>
+
+    <div class="grid-wrapper" id="gridWrapper" style="display:none;">
+      <table id="dataTable">
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<div id="toast"></div>
+
+<script>
+// ── Backdrop image ────────────────────────────────────────
+// Try loading backdrop.PNG from the same directory as the HTML (relative path).
+// If found, apply it to the banner. After a folder is opened we also look inside it.
+(function tryRelativeBackdrop() {
+  const img = new window.Image();
+  img.onload = () => applyBackdrop(img.src);
+  img.onerror = () => {}; // fail silently — banner stays black
+  img.src = 'backdrop.PNG';
+})();
+
+function applyBackdrop(src) {
+  document.getElementById('brandBanner').style.backgroundImage = `url('${src}')`;
+}
+
+async function tryFolderBackdrop(dirHandle) {
+  try {
+    const fileHandle = await dirHandle.getFileHandle('backdrop.PNG');
+    const file = await fileHandle.getFile();
+    const url  = URL.createObjectURL(file);
+    applyBackdrop(url);
+  } catch (_) {
+    // No backdrop.PNG in folder — leave whatever is already set
+  }
+}
+
+// ── Feature detection ────────────────────────────────────
+const FSA_SUPPORTED = ('showDirectoryPicker' in window);
+if (!FSA_SUPPORTED) {
+  document.getElementById('fsaWarning').style.display = 'block';
+}
+
+// ── State ────────────────────────────────────────────────
+const state = {
+  files: {},        // { filename: { headers, rows, dirty, fileHandle? } }
+  active: null,
+  folderHandle: null,
+};
+
+// ── Helpers ───────────────────────────────────────────────
+function uuid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = Math.random() * 16 | 0;
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
+
+function parseCSV(text) {
+  const lines = text.replace(/\r\n/g, '\n').replace(/\r/g, '\n').split('\n').filter(l => l.trim() !== '');
+  if (!lines.length) return { headers: [], rows: [] };
+  function parseLine(line) {
+    const result = []; let cur = '', inQ = false;
+    for (let i = 0; i < line.length; i++) {
+      const ch = line[i];
+      if (inQ) {
+        if (ch === '"') { if (line[i+1] === '"') { cur += '"'; i++; } else inQ = false; }
+        else cur += ch;
+      } else {
+        if (ch === '"') inQ = true;
+        else if (ch === ',') { result.push(cur); cur = ''; }
+        else cur += ch;
+      }
+    }
+    result.push(cur);
+    return result;
+  }
+  const headers = parseLine(lines[0]);
+  const rows = lines.slice(1).map(l => {
+    const vals = parseLine(l);
+    const row = {};
+    headers.forEach((h, i) => { row[h] = vals[i] ?? ''; });
+    return row;
+  });
+  return { headers, rows };
+}
+
+function serializeCSV({ headers, rows }) {
+  function escape(v) {
+    const s = String(v ?? '');
+    return /[,"\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s;
+  }
+  const head = headers.map(escape).join(',');
+  const body = rows.map(r => headers.map(h => escape(r[h])).join(',')).join('\n');
+  return body ? head + '\n' + body : head;
+}
+
+function escapeAttr(v) {
+  return String(v ?? '').replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
+}
+
+// ── Toast ─────────────────────────────────────────────────
+let toastTimer;
+function showToast(msg, type = 'info') {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.className = `show ${type}`;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => { el.className = ''; }, 2600);
+}
+
+// ── Open Folder (FSA) ─────────────────────────────────────
+document.getElementById('btnOpenFolder').addEventListener('click', async () => {
+  if (!FSA_SUPPORTED) {
+    showToast('Folder API not supported — use Chrome or Edge', 'error');
+    return;
+  }
+  try {
+    const dirHandle = await window.showDirectoryPicker({ mode: 'readwrite' });
+    state.folderHandle = dirHandle;
+    document.getElementById('folderPath').textContent = dirHandle.name + '/';
+
+    // Try to load backdrop.PNG from the opened folder
+    await tryFolderBackdrop(dirHandle);
+    // Clear existing files
+    state.files = {};
+    state.active = null;
+    // Scan for CSVs
+    let count = 0;
+    for await (const [name, handle] of dirHandle.entries()) {
+      if (handle.kind === 'file' && name.match(/\.csv$/i)) {
+        const file = await handle.getFile();
+        const text = await file.text();
+        const { headers, rows } = parseCSV(text);
+        state.files[name] = { headers, rows, dirty: false, fileHandle: handle };
+        count++;
+      }
+    }
+    // Sort alphabetically
+    const sorted = {};
+    Object.keys(state.files).sort((a, b) => a.localeCompare(b)).forEach(k => { sorted[k] = state.files[k]; });
+    state.files = sorted;
+
+    renderFileList();
+    // Auto-open first file
+    const first = Object.keys(state.files)[0];
+    if (first) openFile(first);
+    else {
+      renderGrid();
+      updateToolbar();
+      document.getElementById('emptyState').querySelector('p').textContent =
+        'No CSV files found in this folder. Add some CSV files and reopen the folder.';
+    }
+    showToast(`Loaded ${count} CSV file${count !== 1 ? 's' : ''} from ${dirHandle.name}/`, 'success');
+  } catch (err) {
+    if (err.name !== 'AbortError') showToast('Could not open folder: ' + err.message, 'error');
+  }
+});
+
+// ── Individual file fallback ───────────────────────────────
+document.getElementById('fileInput').addEventListener('change', e => {
+  loadFilesFromInput(e.target.files);
+  e.target.value = '';
+});
+
+function loadFilesFromInput(fileObjs) {
+  let loaded = 0;
+  Array.from(fileObjs).forEach(file => {
+    if (!file.name.match(/\.csv$/i)) return;
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const { headers, rows } = parseCSV(ev.target.result);
+      // No fileHandle — will fall back to download on save
+      state.files[file.name] = { headers, rows, dirty: false, fileHandle: null };
+      loaded++;
+      if (loaded === 1 && !state.active) openFile(file.name);
+      renderFileList();
+    };
+    reader.readAsText(file);
+  });
+}
+
+// Drag & drop anywhere on page
+document.body.addEventListener('dragover', e => e.preventDefault());
+document.body.addEventListener('drop', e => {
+  e.preventDefault();
+  const csvFiles = Array.from(e.dataTransfer.files).filter(f => f.name.match(/\.csv$/i));
+  if (csvFiles.length) loadFilesFromInput(csvFiles);
+});
+
+// ── File list rendering ───────────────────────────────────
+function renderFileList() {
+  const list = document.getElementById('fileList');
+  const names = Object.keys(state.files);
+  if (!names.length) {
+    list.innerHTML = '<div class="empty-sidebar">No CSV files loaded.</div>';
+    return;
+  }
+  list.innerHTML = names.map(name => {
+    const f = state.files[name];
+    const active = name === state.active ? 'active' : '';
+    const dirty  = f.dirty ? 'dirty' : '';
+    const icon   = f.fileHandle ? '📄' : '📋'; // folder file vs dropped file
+    return `<div class="file-item ${active} ${dirty}" data-name="${name}">
+      <span class="file-icon">${icon}</span>
+      <span class="file-name">${name}</span>
+      <span class="unsaved-dot"></span>
+    </div>`;
+  }).join('');
+  list.querySelectorAll('.file-item').forEach(el => {
+    el.addEventListener('click', () => openFile(el.dataset.name));
+  });
+}
+
+// ── Open file ─────────────────────────────────────────────
+function openFile(name) {
+  clearAutosaveCountdown();
+  state.active = name;
+  renderFileList();
+  renderGrid();
+  updateToolbar();
+}
+
+// ── Toolbar ───────────────────────────────────────────────
+function updateToolbar() {
+  const name = state.active;
+  const emptyT  = document.getElementById('emptyToolbar');
+  const activeT = document.getElementById('activeToolbar');
+  if (!name) {
+    emptyT.style.display  = '';
+    activeT.style.display = 'none';
+    document.getElementById('globalStatus').textContent = 'No file open';
+    document.getElementById('globalStatus').className  = 'status';
+    return;
+  }
+  emptyT.style.display  = 'none';
+  activeT.style.display = 'flex';
+  const f = state.files[name];
+  document.getElementById('toolbarTitle').innerHTML =
+    `${name.replace(/\.csv$/i, '')}<span class="ext">.csv</span>`;
+  document.getElementById('rowCount').textContent =
+    `${f.rows.length} row${f.rows.length !== 1 ? 's' : ''}`;
+  const status = document.getElementById('globalStatus');
+  if (f.dirty) { status.textContent = 'Unsaved changes'; status.className = 'status unsaved'; }
+  else         { status.textContent = 'All saved';       status.className = 'status saved';   }
+
+  // Update Save button label based on whether we can write back
+  const btnSave = document.getElementById('btnSave');
+  btnSave.textContent = f.fileHandle ? '💾 Save' : '↓ Download';
+}
+
+// ── Grid rendering ────────────────────────────────────────
+function renderGrid() {
+  const name = state.active;
+  const wrapper    = document.getElementById('gridWrapper');
+  const emptyState = document.getElementById('emptyState');
+  if (!name) { wrapper.style.display = 'none'; emptyState.style.display = ''; return; }
+  emptyState.style.display = 'none';
+  wrapper.style.display    = '';
+
+  const f = state.files[name];
+  const { headers, rows } = f;
+  const thead = document.getElementById('tableHead');
+  const tbody = document.getElementById('tableBody');
+
+  thead.innerHTML = `<tr>
+    <th class="row-num-header">#</th>
+    ${headers.map((h, i) => `<th class="${i === 0 ? 'guid-header' : ''}">${h}</th>`).join('')}
+  </tr>`;
+
+  tbody.innerHTML = rows.map((row, ri) => `
+    <tr data-row="${ri}">
+      <td class="row-num">
+        <div class="row-num-inner">
+          <span class="row-number">${ri + 1}</span>
+          <button class="delete-row-btn" data-row="${ri}" title="Delete row">✕</button>
+        </div>
+      </td>
+      ${headers.map((h, ci) => {
+        const isGuid = ci === 0;
+        const val = row[h] ?? '';
+        return `<td class="${isGuid ? 'guid-cell' : ''}">
+          <input class="cell-input" data-row="${ri}" data-col="${h}"
+            value="${escapeAttr(val)}"
+            ${isGuid ? 'readonly tabindex="-1"' : ''}>
+        </td>`;
+      }).join('')}
+    </tr>`).join('');
+
+  // Cell change listeners + keyboard nav
+  tbody.querySelectorAll('.cell-input:not([readonly])').forEach(inp => {
+    inp.addEventListener('input', () => {
+      state.files[name].rows[+inp.dataset.row][inp.dataset.col] = inp.value;
+      markDirty(name);
+    });
+
+    inp.addEventListener('keydown', e => {
+      const ri = +inp.dataset.row;
+      const colName  = inp.dataset.col;
+      const colIndex = headers.indexOf(colName);
+      const editableCols = headers.map((_, i) => i).filter(i => i !== 0);
+
+      function focusCell(targetRow, targetColIdx) {
+        const cell = tbody.querySelector(
+          `.cell-input[data-row="${targetRow}"][data-col="${headers[targetColIdx]}"]`
+        );
+        if (cell && !cell.readOnly) {
+          cell.focus(); cell.select();
+          cell.closest('td').scrollIntoView({ block: 'nearest', inline: 'nearest' });
+          e.preventDefault();
+        }
+      }
+
+      // Ctrl+ArrowDown — clone row below with new GUID
+      if (e.key === 'ArrowDown' && e.ctrlKey) {
+        e.preventDefault();
+        const sourceRow = state.files[name].rows[ri];
+        const newRow = {};
+        headers.forEach((h, i) => { newRow[h] = i === 0 ? uuid() : (sourceRow[h] ?? ''); });
+        state.files[name].rows.splice(ri + 1, 0, newRow);
+        markDirty(name); renderGrid(); updateToolbar();
+        setTimeout(() => focusCell(ri + 1, colIndex), 20);
+        return;
+      }
+      // Ctrl+ArrowUp — jump to first row
+      if (e.key === 'ArrowUp' && e.ctrlKey) {
+        e.preventDefault();
+        setTimeout(() => focusCell(0, colIndex), 0);
+        return;
+      }
+
+      // Plain arrow nav
+      if (e.key === 'ArrowUp') {
+        if (ri > 0) focusCell(ri - 1, colIndex); else e.preventDefault();
+      } else if (e.key === 'ArrowDown') {
+        if (ri < rows.length - 1) focusCell(ri + 1, colIndex); else e.preventDefault();
+      } else if (e.key === 'ArrowLeft') {
+        const pos = editableCols.indexOf(colIndex);
+        if (pos > 0) focusCell(ri, editableCols[pos - 1]);
+        else if (ri > 0) focusCell(ri - 1, editableCols[editableCols.length - 1]);
+      } else if (e.key === 'ArrowRight') {
+        const pos = editableCols.indexOf(colIndex);
+        if (pos < editableCols.length - 1) focusCell(ri, editableCols[pos + 1]);
+        else if (ri < rows.length - 1) focusCell(ri + 1, editableCols[0]);
+      } else if (e.key === 'Tab') {
+        const pos = editableCols.indexOf(colIndex);
+        if (!e.shiftKey) {
+          if (pos < editableCols.length - 1) focusCell(ri, editableCols[pos + 1]);
+          else if (ri < rows.length - 1) focusCell(ri + 1, editableCols[0]);
+          else e.preventDefault();
+        } else {
+          if (pos > 0) focusCell(ri, editableCols[pos - 1]);
+          else if (ri > 0) focusCell(ri - 1, editableCols[editableCols.length - 1]);
+          else e.preventDefault();
+        }
+      } else if (e.key === 'd' && e.ctrlKey) {
+        // Ctrl+D — copy from above
+        e.preventDefault();
+        if (ri === 0) return;
+        const above = state.files[name].rows[ri - 1][colName] ?? '';
+        inp.value = above;
+        state.files[name].rows[ri][colName] = above;
+        markDirty(name);
+        inp.style.transition = 'background 0s';
+        inp.style.background = '#3ecf8e28';
+        setTimeout(() => { inp.style.transition = 'background 0.4s'; inp.style.background = ''; }, 180);
+      } else if (e.key === 'Enter') {
+        if (ri < rows.length - 1) focusCell(ri + 1, colIndex); else e.preventDefault();
+      }
+    });
+  });
+
+  // Delete row buttons
+  tbody.querySelectorAll('.delete-row-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.files[name].rows.splice(+btn.dataset.row, 1);
+      markDirty(name); renderGrid(); updateToolbar();
+    });
+  });
+}
+
+function markDirty(name) {
+  state.files[name].dirty = true;
+  renderFileList();
+  updateToolbar();
+}
+
+// ── Add row ───────────────────────────────────────────────
+document.getElementById('btnAddRow').addEventListener('click', () => {
+  const name = state.active;
+  if (!name) return;
+  const f = state.files[name];
+  const newRow = {};
+  f.headers.forEach((h, i) => { newRow[h] = i === 0 ? uuid() : ''; });
+  f.rows.push(newRow);
+  markDirty(name); renderGrid(); updateToolbar();
+  setTimeout(() => {
+    const wrapper = document.getElementById('gridWrapper');
+    wrapper.scrollTop = wrapper.scrollHeight;
+    const lastRow = document.querySelector('#tableBody tr:last-child');
+    if (lastRow) { const inp = lastRow.querySelector('.cell-input:not([readonly])'); if (inp) inp.focus(); }
+  }, 20);
+});
+
+// ── Backup helpers ────────────────────────────────────────
+const BACKUP_FOLDER  = '.backups';
+const MAX_BACKUPS    = 5;
+
+// Returns a timestamp string like 20240616-143022
+function backupTimestamp() {
+  const d = new Date();
+  const pad = n => String(n).padStart(2, '0');
+  return `${d.getFullYear()}${pad(d.getMonth()+1)}${pad(d.getDate())}`
+       + `-${pad(d.getHours())}${pad(d.getMinutes())}${pad(d.getSeconds())}`;
+}
+
+// name = "data.csv"  →  stem = "data", ext = ".csv"
+function splitName(name) {
+  const dot = name.lastIndexOf('.');
+  return dot > 0
+    ? { stem: name.slice(0, dot), ext: name.slice(dot) }
+    : { stem: name, ext: '' };
+}
+
+async function writeBackup(folderHandle, name, currentContent) {
+  try {
+    // Get/create the .backups sub-directory
+    const backupDir = await folderHandle.getDirectoryHandle(BACKUP_FOLDER, { create: true });
+
+    // Write the new backup: e.g. "data.20240616-143022.csv"
+    const { stem, ext } = splitName(name);
+    const backupName = `${stem}.${backupTimestamp()}${ext}`;
+    const backupHandle = await backupDir.getFileHandle(backupName, { create: true });
+    const writable = await backupHandle.createWritable();
+    await writable.write(currentContent);
+    await writable.close();
+
+    // Collect all backups for this stem and prune oldest beyond MAX_BACKUPS
+    // Pattern: stem + "." + 15-char timestamp + ext
+    const prefix = stem + '.';
+    const suffix = ext;
+    const allBackups = [];
+    for await (const [fname] of backupDir.entries()) {
+      if (fname.startsWith(prefix) && fname.endsWith(suffix) && fname !== name) {
+        // Extract the timestamp portion
+        const middle = fname.slice(prefix.length, fname.length - suffix.length);
+        // Timestamp is 15 chars: YYYYMMDD-HHmmss
+        if (/^\d{8}-\d{6}$/.test(middle)) {
+          allBackups.push(fname);
+        }
+      }
+    }
+    // Sort ascending (oldest first) and delete any beyond MAX_BACKUPS
+    allBackups.sort();
+    const excess = allBackups.length - MAX_BACKUPS;
+    for (let i = 0; i < excess; i++) {
+      await backupDir.removeEntry(allBackups[i]);
+    }
+  } catch (err) {
+    console.warn('Backup failed:', err);
+    // Non-fatal — don't block the actual save
+  }
+}
+
+// ── Save ──────────────────────────────────────────────────
+async function saveFile(name, { silent = false } = {}) {
+  if (!name) return;
+  const f = state.files[name];
+  if (!f) return;
+  const csv = serializeCSV(f);
+
+  if (f.fileHandle) {
+    // Write directly back to disk via FSA
+    try {
+      // 1. Read the current on-disk content before overwriting it
+      const existingFile = await f.fileHandle.getFile();
+      const existingContent = await existingFile.text();
+
+      // 2. Write backup of the old version (only if there's something to back up)
+      if (existingContent.trim() && state.folderHandle) {
+        await writeBackup(state.folderHandle, name, existingContent);
+      }
+
+      // 3. Write the new content
+      const writable = await f.fileHandle.createWritable();
+      await writable.write(csv);
+      await writable.close();
+
+      f.dirty = false;
+      if (!silent) clearAutosaveCountdown();
+      renderFileList(); updateToolbar();
+      showToast(silent ? `Auto-saved ${name}` : `Saved ${name}`, 'success');
+    } catch (err) {
+      showToast(`Save failed: ${err.message}`, 'error');
+    }
+  } else {
+    // No file handle — fall back to download
+    const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+    const url  = URL.createObjectURL(blob);
+    const a    = document.createElement('a');
+    a.href = url; a.download = name; a.click();
+    URL.revokeObjectURL(url);
+    f.dirty = false;
+    if (!silent) clearAutosaveCountdown();
+    renderFileList(); updateToolbar();
+    showToast(silent ? `Downloaded ${name}` : `Downloaded ${name}`, 'success');
+  }
+}
+
+document.getElementById('btnSave').addEventListener('click', () => saveFile(state.active));
+
+// ── Autosave (30 s keyboard inactivity) ───────────────────
+let autosaveTimer = null;
+let autosaveCountdownInterval = null;
+const AUTOSAVE_DELAY = 30_000;
+
+function clearAutosaveCountdown() {
+  clearTimeout(autosaveTimer);
+  clearInterval(autosaveCountdownInterval);
+  autosaveTimer = null;
+  autosaveCountdownInterval = null;
+}
+
+function scheduleAutosave() {
+  clearAutosaveCountdown();
+  const deadline = Date.now() + AUTOSAVE_DELAY;
+  autosaveCountdownInterval = setInterval(() => {
+    const remaining = Math.ceil((deadline - Date.now()) / 1000);
+    if (remaining > 0 && state.active && state.files[state.active]?.dirty) {
+      const status = document.getElementById('globalStatus');
+      status.textContent = `Auto-save in ${remaining}s`;
+      status.className   = 'status unsaved';
+    }
+  }, 1000);
+  autosaveTimer = setTimeout(async () => {
+    clearInterval(autosaveCountdownInterval);
+    const dirtyNames = Object.keys(state.files).filter(n => state.files[n].dirty);
+    for (const n of dirtyNames) await saveFile(n, { silent: true });
+  }, AUTOSAVE_DELAY);
+}
+
+document.getElementById('tableBody').addEventListener('keydown', scheduleAutosave);
+
+// ── Remove from sidebar ───────────────────────────────────
+document.getElementById('btnRemove').addEventListener('click', () => {
+  const name = state.active;
+  if (!name) return;
+  if (state.files[name].dirty && !confirm(`"${name}" has unsaved changes. Remove anyway?`)) return;
+  delete state.files[name];
+  const remaining = Object.keys(state.files);
+  state.active = remaining.length ? remaining[remaining.length - 1] : null;
+  renderFileList();
+  if (state.active) { renderGrid(); updateToolbar(); }
+  else {
+    document.getElementById('gridWrapper').style.display = 'none';
+    document.getElementById('emptyState').style.display  = '';
+    document.getElementById('activeToolbar').style.display = 'none';
+    document.getElementById('emptyToolbar').style.display  = '';
+    document.getElementById('globalStatus').textContent    = 'No file open';
+    document.getElementById('globalStatus').className      = 'status';
+  }
+});
+</script>
+</body>
+</html>

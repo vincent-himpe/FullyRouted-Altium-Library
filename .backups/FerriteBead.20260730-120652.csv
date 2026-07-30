@@ -1,0 +1,7 @@
+"ID","Description","Library Ref","Library Path","Footprint Ref","Footprint Path","Manufacturer","Manufacturer PartNo","Package","AEC-Q","Impedance","Isat","Supplier","Supplier PartNo","Location"
+1,,,,,,"STEWART","HI1206N800R","1206",,"80Z","3A",,,"R24, R25, R26"
+2,,,,,,"FERRITE",,"DO41",,,,,,"A0587"
+3,,,,,,"FERRITE","6X7 BALUN","PIGSNOUT",,,,,,"A0451"
+4,,,,,,"FERRITE","11X5X1","CYLINDER",,,,,,"A0451"
+5,,,,,,"FERRITE","3X3X1","CYLINDER",,,,,,"A0451"
+6,,,,,,"FERRITE","14MMX3MM","CYLINDER",,,,,,"A0495"

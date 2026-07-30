@@ -1,0 +1,522 @@
+{
+  "version": 1,
+  "ruleSets": [
+    {
+      "match": "capacitors.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"CAP\"",
+          "CapType",
+          "Value",
+          "Voltage",
+          "Dielectric",
+          "Package"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Fuses.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Current (Hold)",
+          "transforms": [
+            "replace:a=>A",
+            "replace:M=>m"
+          ]
+        },
+        {
+          "column": "Current (Break)",
+          "transforms": [
+            "replace:a=>A",
+            "replace:M=>m"
+          ]
+        },
+        {
+          "column": "Voltage",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"FUSE\"",
+          "Current (Hold)",
+          "Voltage",
+          "Package"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Diodes.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "JAMECO",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Vr",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "If",
+          "transforms": [
+            "upper",
+            "replace:M=>m"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "DIOtype",
+          "transforms": [
+            "upper"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"DIODE\"",
+          "DIOtype",
+          "Vr",
+          "If",
+          "Genericname",
+          "Package"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "FerriteBead.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "UPPER"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Isat",
+          "transforms": [
+            "upper",
+            "replace:M=>m"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"FERRITE BEAD\"",
+          "impedance",
+          "isat",
+          "package"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "IC.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "GenericName",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "ICtype",
+          "transforms": [
+            "upper",
+            "stripspaces"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"IC\"",
+          "ICtype",
+          "GenericName",
+          "Package"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Connectors.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Features",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "PinOut",
+          "transforms": [
+            "upper",
+            "stripspaces"
+          ]
+        },
+        {
+          "column": "Pitch",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "stripspaces"
+          ]
+        },
+        {
+          "column": "CONtype",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Color",
+          "transforms": [
+            "upper"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"CONNECTOR\"",
+          "Features",
+          "Pinout",
+          "Pitch",
+          "Color",
+          "CONtype"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    }
+  ]
+}
