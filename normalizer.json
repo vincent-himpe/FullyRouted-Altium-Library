@@ -7,80 +7,130 @@
         {
           "column": "Library Ref",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Library Path",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Footprint Ref",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Footprint Path",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Manufacturer 1",
           "transforms": [
+            "upper",
             "trim"
           ]
         },
         {
           "column": "Manufacturer Part Number 1",
           "transforms": [
+            "upper",
             "trim"
           ]
         },
         {
           "column": "Location",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "LCSC",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Digikey",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Mouser",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "TME",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "JAMECO",
+          "transforms": [
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Package",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Value",
+          "transforms": [
+            "upper",
+            "trim",
+            "replace:N=>n",
+            "replace:P=>p",
+            "replace:U=>u"
+          ]
+        },
+        {
+          "column": "Voltage",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "CapType",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Dielectric",
+          "transforms": [
+            "upper",
+            "trim"
           ]
         }
       ],
       "build": {
         "target": "Description",
         "sources": [
-          "\"CAP\"",
+          "\"CAPACITOR\"",
           "CapType",
           "Value",
           "Voltage",
@@ -125,27 +175,13 @@
           ]
         },
         {
-          "column": "Current (Hold)",
-          "transforms": [
-            "replace:a=>A",
-            "replace:M=>m"
-          ]
-        },
-        {
-          "column": "Current (Break)",
-          "transforms": [
-            "replace:a=>A",
-            "replace:M=>m"
-          ]
-        },
-        {
-          "column": "Voltage",
+          "column": "Package",
           "transforms": [
             "upper"
           ]
         },
         {
-          "column": "Package",
+          "column": "Voltage",
           "transforms": [
             "upper"
           ]
@@ -169,92 +205,129 @@
         {
           "column": "Library Ref",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Library Path",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Footprint Ref",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Footprint Path",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Manufacturer 1",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Location",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "LCSC",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Digikey",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Mouser",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "TME",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "JAMECO",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Vr",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "If",
           "transforms": [
             "upper",
+            "trim",
+            "replace:M=>m"
+          ]
+        },
+        {
+          "column": "Power",
+          "transforms": [
+            "upper",
+            "trim",
             "replace:M=>m"
           ]
         },
         {
           "column": "Package",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "DIOtype",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "GenericName",
+          "transforms": [
+            "upper",
+            "trim"
           ]
         }
       ],
@@ -265,6 +338,7 @@
           "DIOtype",
           "Vr",
           "If",
+          "power",
           "Genericname",
           "Package"
         ],
@@ -315,13 +389,6 @@
           "column": "Location",
           "transforms": [
             "upper"
-          ]
-        },
-        {
-          "column": "Isat",
-          "transforms": [
-            "upper",
-            "replace:M=>m"
           ]
         },
         {
@@ -389,22 +456,9 @@
           ]
         },
         {
-          "column": "GenericName",
-          "transforms": [
-            "upper"
-          ]
-        },
-        {
           "column": "Package",
           "transforms": [
             "upper"
-          ]
-        },
-        {
-          "column": "ICtype",
-          "transforms": [
-            "upper",
-            "stripspaces"
           ]
         }
       ],
@@ -426,81 +480,129 @@
         {
           "column": "Library Ref",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Library Path",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Footprint Ref",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Footprint Path",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Manufacturer 1",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Location",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "JAMECO",
+          "transforms": [
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Features",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "PinOut",
           "transforms": [
             "upper",
-            "stripspaces"
+            "trim"
           ]
         },
         {
           "column": "Pitch",
           "transforms": [
-            "upper"
+            "upper",
+            "trim",
+            "replace:MIL=>mil",
+            "replace:MM=>mm"
           ]
         },
         {
           "column": "Mounting",
           "transforms": [
             "upper",
-            "stripspaces"
+            "trim"
           ]
         },
         {
           "column": "CONtype",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Color",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Package",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         }
       ],
@@ -513,6 +615,465 @@
           "Pitch",
           "Color",
           "CONtype"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "AUDIO.CSV",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Voltage",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"AUDIO\"",
+          "Audiotype",
+          "Voltage",
+          "Package"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Batteries.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "JAMECO",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Voltage",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Power",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Capacity",
+          "transforms": [
+            "upper",
+            "trim",
+            "replace:M=>m",
+            "replace:H=>h"
+          ]
+        },
+        {
+          "column": "Chemistry",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"BATTERY\"",
+          "chemistry",
+          "voltage",
+          "capacity",
+          "package"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Mosfet.csv",
+      "normalizations": []
+    },
+    {
+      "match": "Crystals.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Frequency",
+          "transforms": [
+            "upper",
+            "trim",
+            "replace:MHZ=>MHz",
+            "replace:KHZ=>kHz"
+          ]
+        },
+        {
+          "column": "Tempco",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"XTAL\"",
+          "XTALTYPE",
+          "frequency",
+          "tempco",
+          "package",
+          "mounting"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Display.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Display Type",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Characters",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "GenericName",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"DISPLAY\"",
+          "display type",
+          "characters"
         ],
         "separator": ",",
         "skipEmpty": true

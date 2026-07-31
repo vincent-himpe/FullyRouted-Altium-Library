@@ -1,3 +1,3 @@
-"Index","Library Ref","Library Path","Footprint Ref","Footprint Path","Description","Manufacturer 1","Manufacturer Part Number 1","Location","LCSC","Digikey","Mouser","TME","Manufacturer","Manufacturer PartNo","Package","Model","Voltage","Supplier","Supplier PartNo","GenericName","Power","Capacity","Chemistry"
-"ab3248a3-d760-40ae-9950-f542506fe4d2","","","","","","","","A0856","","","","","FDK","CR14250SE","","","3V","","","","","","LITHIUM"
-"89b465e7-b1c7-4373-b530-87c4293f9073","","","","","","","","A0857","","","","","PANASONIC","BR-2/3A","","","3V","","","","","","LITHIUM"
+"Index","Library Ref","Library Path","Footprint Ref","Footprint Path","Description","Manufacturer 1","Manufacturer Part Number 1","Location","LCSC","Digikey","Mouser","TME","JAMECO","Package","Voltage","Power","Capacity","Chemistry"
+"ab3248a3-d760-40ae-9950-f542506fe4d2","","","","","BATTERY,LITHIUM,3V,850mAh,CR14250","FDK","CR14250SE","A0856","","SY605-ND","","","2741143","CR14250","3V","","850mAh","LITHIUM"
+"89b465e7-b1c7-4373-b530-87c4293f9073","","","","","BATTERY,LITHIUM,3V,1200mAh,2/3A,TABBED","PANASONIC","BR-2/3AE2SP","A0857","","","","BR-2/3A-PF","","2/3A,TABBED","3V","","1200mAh","LITHIUM"
