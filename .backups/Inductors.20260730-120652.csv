@@ -1,9 +1,0 @@
-"ID","Description","Library Ref","Library Path","Footprint Ref","Footprint Path","Manufacturer","Manufacturer PartNo","Package","AEC-Q","Isat","Inductance","Type","Supplier","Supplier PartNo","Location","Field1"
-1,,,,,,,"SMNR6028-220MT",,,,,,"LCSC",,"A0148","A0148"
-2,,,,,,,"RFS1317-104KL",,,"2.65A","100uH",,,,"A0282",
-3,,,,,,,"TSL1112RA-330K2R3-PF",,,"2.3A","33uH",,,,"A0397",
-4,,,,,,,"VLCF4028T-4R7N1R5",,,"1.57","4u7",,,,"R628",
-5,,,,,,,"SRV4026-4R7MCT-ND",,,,,,,,"R634",
-6,,,,,,,"LQH5BPN1R5NT0L",,,,,,,,"R781",
-7,,,,,,"BAO CHENG","BCNR6045-470M",,,"1.2A","47uH",,"LCSC","C238005","A0417",
-8,,,,,,"SXN","SMNR5028-470MT",,,"1.15A","47uH",,"LCSC","C266432","A0424",

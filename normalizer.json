@@ -1078,6 +1078,111 @@
         "separator": ",",
         "skipEmpty": true
       }
+    },
+    {
+      "match": "Inductors.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Isat",
+          "transforms": [
+            "trim",
+            "upper",
+            "replace:M=>m"
+          ]
+        },
+        {
+          "column": "Inductance",
+          "transforms": [
+            "trim",
+            "upper",
+            "replace:U=>u"
+          ]
+        },
+        {
+          "column": "INDType",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Shielding",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "trim",
+            "upper"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"IND\"",
+          "indtype",
+          "shielding",
+          "inductance",
+          "isat",
+          "package",
+          "mounting"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
     }
   ]
 }
