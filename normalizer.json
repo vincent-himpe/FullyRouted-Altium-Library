@@ -329,6 +329,13 @@
             "upper",
             "trim"
           ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
         }
       ],
       "build": {
@@ -340,7 +347,8 @@
           "If",
           "power",
           "Genericname",
-          "Package"
+          "Package",
+          "mounting"
         ],
         "separator": ",",
         "skipEmpty": true
@@ -832,7 +840,120 @@
     },
     {
       "match": "Mosfet.csv",
-      "normalizations": []
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "AEC-Q",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Ids",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Vds",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "MOSType",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "GenericName",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"MOS\"",
+          "mostype",
+          "vds",
+          "ids",
+          "genericname",
+          "package",
+          "mounting"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
     },
     {
       "match": "Crystals.csv",
@@ -1177,6 +1298,116 @@
           "shielding",
           "inductance",
           "isat",
+          "package",
+          "mounting"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Transistors.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Vceo",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Ic",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "GenericName",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "BJTtype",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "description",
+        "sources": [
+          "\"TRANSISTOR\"",
+          "bjttype",
+          "vceo",
+          "ic",
+          "genericname",
           "package",
           "mounting"
         ],
