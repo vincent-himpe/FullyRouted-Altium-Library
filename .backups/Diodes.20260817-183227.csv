@@ -126,5 +126,5 @@
 "623e0706-85e3-47af-8f59-ef49e11a255b","",".\SCHLIB\DIODES.SCHLIB","","","DIODE,STPS3045CP,TO247,TH","ST","STPS3045CP","A0752","","","","","","","","","TO247","","STPS3045CP","TH",""
 "27f83e5f-3dc7-46d5-9a47-b2dc59e00478","",".\SCHLIB\DIODES.SCHLIB","","","DIODE,1N4148,GLASS,TH","","1N4148","A0790","","","","","","","","","GLASS","","1N4148","TH",""
 "df36fe7f-3766-4ffd-ba5d-6e04fb2dd7d6","",".\SCHLIB\DIODES.SCHLIB","","","DIODE,1N4004","MOTOROLA","1N4004","A0852, A0853, A0854, A0855","","","","","","","","","","","1N4004","",""
-"75ed46eb-2f2f-42b5-aa0a-d45d911b94df","","","","","DIODE,SCHOTTKY,20V,3A","DIODES","SK32-7","A988","","","","","","20V","3A","","","SCHOTTKY","","","REPLACED BY B3X0 SERIES"
-"da440854-07bb-4c17-be24-a3f49e1653a3","","","","","DIODE,DUAL SERIES,SWITCHING,75V,300mA,SOT23","NXP","BAV99","A1006","","","","","","75V","300mA","","SOT23","DUAL SERIES,SWITCHING","","",""
+"75ed46eb-2f2f-42b5-aa0a-d45d911b94df","","","","","DIODE,SCHOTTKY,20V,3A","DIODES","SK32-7","A988","","","","","","20V","3A","","","SCHOTTKY","","","replaced by b3x0 series"
+"da440854-07bb-4c17-be24-a3f49e1653a3","","","","","DIODE,DUAL SERIES,SWITCHING,75V,300mA,SOT23","NXP","BAV99","","","","","","","75V","300mA","","SOT23","DUAL SERIES,SWITCHING","","",""

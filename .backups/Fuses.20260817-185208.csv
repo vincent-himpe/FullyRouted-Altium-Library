@@ -14,7 +14,7 @@
 "34a823ab-29d4-477b-9b1c-4be55336c8fd","","","","","FUSE,SINGLE BLOW,5A,PICOFUSE,AXIAL,TH","LITTELFUSE","PICOFUSE","A0637","","","","","5A","","","PICOFUSE,AXIAL","","SINGLE BLOW","TH"
 "09ed61fc-77ab-4953-a3ac-53fb7e17218a","","","","","FUSE,125OHm,PTC","TDK","B59707A0120A062","R611","","","","","125OHm","","","PTC","","",""
 "cfadfb56-0d23-4285-8049-c73c678aa5b0","","","","","FUSE,POLYFUSE,0.35,6V,0805,SMD","LITTELFUSE","0805L035YR","R747","","","","","0.35","0.75","6V","0805","","POLYFUSE","SMD"
-"3e6d12c8-7275-4f1d-bafb-90d7d829d52c","","","","","FUSE,POLYFUSE,50mA,15V,0603,SMD","RUILON","SMD0603P005TF","R746","C167317","","","","50mA","","15V","0603","","POLYFUSE","SMD"
+"3e6d12c8-7275-4f1d-bafb-90d7d829d52c","","","","","FUSE,POLYFUSE,50mA,15V,0603,SMD","RUILON","SMD0603P005TF","R746","c167317","","","","50mA","","15V","0603","","POLYFUSE","SMD"
 "34fce0db-94f8-4ba7-be67-815972ca449b","","","","","FUSE,42OHm,PTC","","PRG21AR420MB1RA","R784","","","","","42OHm","","","PTC","","",""
 "7823a8ba-663d-4adf-a3b6-b1195bb218cd","","","","","FUSE,SINGLE BLOW,15A,600V,FLUKE,CARTRIDGE","BUSSMAN","KTK-R-15","A0526","","","","","15A","","600V","FLUKE","","SINGLE BLOW","CARTRIDGE"
 "b1e87120-7e2d-40a8-b8f7-09b5f635bca4","","","","","FUSE","LITTELFUSE","2AG 1/2A 224","A0527","","","","","","","","","","",""

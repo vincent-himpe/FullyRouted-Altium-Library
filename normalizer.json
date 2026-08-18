@@ -147,43 +147,129 @@
         {
           "column": "Library Ref",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Library Path",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Footprint Ref",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Footprint Path",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
           ]
         },
         {
           "column": "Location",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
           ]
         },
         {
-          "column": "Package",
+          "column": "LCSC",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Current (Hold)",
+          "transforms": [
+            "upper",
+            "trim",
+            "replace:M=>m"
+          ]
+        },
+        {
+          "column": "Current (Break)",
+          "transforms": [
+            "upper",
+            "trim",
+            "replace:M=>m"
           ]
         },
         {
           "column": "Voltage",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "GenericName",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "FUSEtype",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
           ]
         }
       ],
@@ -191,9 +277,11 @@
         "target": "Description",
         "sources": [
           "\"FUSE\"",
+          "fusetype",
           "Current (Hold)",
           "Voltage",
-          "Package"
+          "Package",
+          "mounting"
         ],
         "separator": ",",
         "skipEmpty": true
@@ -336,6 +424,13 @@
             "upper",
             "trim"
           ]
+        },
+        {
+          "column": "Remarks",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
         }
       ],
       "build": {
@@ -464,9 +559,31 @@
           ]
         },
         {
+          "column": "GenericName",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
           "column": "Package",
           "transforms": [
-            "upper"
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "ICtype",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
           ]
         }
       ],
@@ -476,7 +593,8 @@
           "\"IC\"",
           "ICtype",
           "GenericName",
-          "Package"
+          "Package",
+          "mounting"
         ],
         "separator": ",",
         "skipEmpty": true
@@ -1410,6 +1528,271 @@
           "genericname",
           "package",
           "mounting"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "LED.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "JAMECO",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "If",
+          "transforms": [
+            "upper",
+            "trim",
+            "replace:M=>m"
+          ]
+        },
+        {
+          "column": "Color",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LEDtype",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "GenericName",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "description",
+        "sources": [
+          "\"LED\"",
+          "mounting",
+          "color",
+          "package"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Mechanical.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "MECHtype",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "JAMECO",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "DESCRIPTION",
+        "sources": [
+          "\"MECH\"",
+          "MECHTYPE",
+          "MOUNTING",
+          "MANUFACTURER 1",
+          "MANUFACTURER PART NUMBER 1"
         ],
         "separator": ",",
         "skipEmpty": true
