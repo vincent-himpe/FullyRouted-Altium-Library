@@ -1,0 +1,21 @@
+{
+  "Index": "798dea9e-4552-4796-89a1-ed8ad3f63cf8",
+  "Library Ref": "",
+  "Library Path": "",
+  "Footprint Ref": "",
+  "Footprint Path": "",
+  "Description": "IC,REGULATOR,LINEAR,POSITIVE,7805CT,TO220",
+  "Manufacturer 1": "MOTOROLA",
+  "Manufacturer Part Number 1": "7805CT",
+  "Location": "R42",
+  "LCSC": "",
+  "Digikey": "",
+  "Mouser": "",
+  "TME": "",
+  "JAMECO": "",
+  "GenericName": "7805CT",
+  "Package": "TO220",
+  "ICtype": "REGULATOR,LINEAR,POSITIVE",
+  "Mounting": "",
+  "File imported": "true"
+}

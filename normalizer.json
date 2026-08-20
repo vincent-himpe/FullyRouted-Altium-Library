@@ -1797,6 +1797,150 @@
         "separator": ",",
         "skipEmpty": true
       }
+    },
+    {
+      "match": "Resistors.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Resistance",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Tempco",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Voltage",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "RESType",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Tolerance",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Wattage",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "Description",
+        "sources": [
+          "\"RESISTOR\"",
+          "package",
+          "resistance",
+          "tolerance",
+          "wattage",
+          "restype"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
     }
   ]
 }

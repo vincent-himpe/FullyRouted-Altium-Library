@@ -1,0 +1,18 @@
+{
+  "Index": "7548836f-2c3d-45c6-b6c8-ef7e5dfdf3d0",
+  "Library Ref": "",
+  "Library Path": "",
+  "Footprint Ref": "",
+  "Footprint Path": "",
+  "Description": "AUDIO,BUZZER,PIEZO,SELF-OSCILLATING,4-16V,TH,VERT",
+  "Manufacturer 1": "CUI",
+  "Manufacturer Part Number 1": "CEP-2242G",
+  "Location": "A0174",
+  "LCSC": "",
+  "Digikey": "",
+  "Mouser": "",
+  "TME": "",
+  "Package": "TH,VERT",
+  "Voltage": "4-16V",
+  "AUDIOType": "BUZZER,PIEZO,SELF-OSCILLATING"
+}
