@@ -1016,13 +1016,6 @@
           ]
         },
         {
-          "column": "AEC-Q",
-          "transforms": [
-            "upper",
-            "trim"
-          ]
-        },
-        {
           "column": "Ids",
           "transforms": [
             "upper",
