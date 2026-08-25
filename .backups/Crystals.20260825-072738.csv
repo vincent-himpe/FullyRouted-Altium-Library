@@ -16,4 +16,4 @@
 "7eb508f1-9d9e-49ec-80eb-6cf99322328d","","","","","XTAL,CRYSTAL,6.176MHz,HC49TH,TH","","FS6.176","A0724","","","","","HC49TH","6.176MHz","","TH","CRYSTAL"
 "394c3aa4-3fee-4f83-80f8-b0436093ed84","","","","","XTAL,OSCILLATOR,20MHz,SMD","","SG615G-20","A0780, A0827, A0828, A0848, A0849, A0850","","","","","","20MHz","","SMD","OSCILLATOR"
 "5e2b9364-6c9f-44e3-94a6-b0c5f32be54f","","","","","XTAL,12MHz","","ILSI-12.0-113","A0797","","","","","","12MHz","","",""
-"540c7170-22bb-4761-925f-c69524cfc8d9","","","","","XTAL,12V OVEN,10MHz,TH","TECHPOINT GOLLEDGE","HCD361DPFN","A1397","","","","","","10MHz","","TH","12V OVEN"
+"540c7170-22bb-4761-925f-c69524cfc8d9","","","","","XTAL,12V OVEN,10MHz,MODULE,CHASSIS","","HCO361DPFN","A1397","","","","","","10MHz","","MODULE,CHASSIS","12V OVEN"

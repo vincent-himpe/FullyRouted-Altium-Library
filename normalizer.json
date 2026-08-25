@@ -1175,6 +1175,13 @@
             "upper",
             "trim"
           ]
+        },
+        {
+          "column": "XTALtype",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
         }
       ],
       "build": {
@@ -1476,28 +1483,7 @@
           ]
         },
         {
-          "column": "Vceo",
-          "transforms": [
-            "upper",
-            "trim"
-          ]
-        },
-        {
-          "column": "Ic",
-          "transforms": [
-            "upper",
-            "trim"
-          ]
-        },
-        {
           "column": "GenericName",
-          "transforms": [
-            "upper",
-            "trim"
-          ]
-        },
-        {
-          "column": "BJTtype",
           "transforms": [
             "upper",
             "trim"
@@ -1515,9 +1501,9 @@
         "target": "description",
         "sources": [
           "\"TRANSISTOR\"",
-          "bjttype",
-          "vceo",
-          "ic",
+          "transistortype",
+          "vceo-vds",
+          "ic-ids",
           "genericname",
           "package",
           "mounting"
@@ -1930,6 +1916,208 @@
           "tolerance",
           "wattage",
           "restype"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "MODULES.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Function",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "description",
+        "sources": [
+          "\"MODULE\"",
+          "Function",
+          "Manufacturer 1",
+          "Manufacturer Part Number 1"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "OPTOCOUPLERS.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "OUTPUT",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "INPUT",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "CHANNELS",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "MOUNTING",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "PACKAGE",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "description",
+        "sources": [
+          "\"OPTOCOUPLER\"",
+          "channels",
+          "input",
+          "output",
+          "package",
+          "mounting"
         ],
         "separator": ",",
         "skipEmpty": true

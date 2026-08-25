@@ -1,0 +1,23 @@
+{
+  "Index": "41153b2e-8752-40da-a18f-f5a4e87fa89d",
+  "Library Ref": "",
+  "Library Path": "",
+  "Footprint Ref": "",
+  "Footprint Path": "",
+  "Description": "MOS,P-CH,12V,7.1A,SI2333CDS-T1-GE3,SOT23,SMD",
+  "Manufacturer 1": "SILICONIX",
+  "Manufacturer Part Number 1": "SI2333CDS-T1-GE3",
+  "Location": "R34",
+  "LCSC": "",
+  "Digikey": "",
+  "Mouser": "",
+  "TME": "",
+  "JAMECO": "",
+  "Package": "SOT23",
+  "Ids": "7.1A",
+  "Vds": "12V",
+  "MOSType": "P-CH",
+  "GenericName": "SI2333CDS-T1-GE3",
+  "Mounting": "SMD",
+  "File imported": "true"
+}
