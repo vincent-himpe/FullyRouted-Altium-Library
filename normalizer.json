@@ -2122,6 +2122,253 @@
         "separator": ",",
         "skipEmpty": true
       }
+    },
+    {
+      "match": "Relay.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "RELAYtype",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Contact-Voltage",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Contact-Current",
+          "transforms": [
+            "UPPER",
+            "TRIM",
+            "REPLACE:M=>m"
+          ]
+        },
+        {
+          "column": "Coil-Voltage",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Latching",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "UPPER",
+            "TRIM"
+          ]
+        }
+      ],
+      "build": {
+        "target": "DESCRIPTION",
+        "sources": [
+          "\"RELAY\"",
+          "RELAYTYPE",
+          "CONTACT-VOLTAGE",
+          "CONTACT-CURRENT",
+          "LATCHING",
+          "COIL-VOLTAGE",
+          "MOUNTING"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
+    },
+    {
+      "match": "Switch.csv",
+      "normalizations": [
+        {
+          "column": "Library Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Library Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Ref",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Footprint Path",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Location",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "LCSC",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Digikey",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mouser",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "TME",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Switchtype",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Package",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Features",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Mounting",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
+          "column": "Voltage",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        }
+      ],
+      "build": {
+        "target": "description",
+        "sources": [
+          "\"SWITCH\"",
+          "switchtype",
+          "package",
+          "features",
+          "mounting"
+        ],
+        "separator": ",",
+        "skipEmpty": true
+      }
     }
   ]
 }

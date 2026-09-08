@@ -1,5 +1,5 @@
 "Index","Library Ref","Library Path","Footprint Ref","Footprint Path","Description","Manufacturer 1","Manufacturer Part Number 1","Location","LCSC","Digikey","Mouser","TME","RELAYtype","Contact-Voltage","Contact-Current","Coil-Voltage","Latching","Mounting","Package"
-"14487679-185c-45e2-b0c8-36123c435e8f","","","","","RELAY,DPDT,220VDC 250VAC,2A,LATCHING 2 COIL,12V,TH","NAIS","DS2Y-SL2-DC12V","A0003","","","","","DPDT","220VDC 250VAC","2A","12V","LATCHING 2 COIL","TH",""
+"14487679-185c-45e2-b0c8-36123c435e8f","","","","","RELAY,DPDT,220VDC 250VAC,2A,LATCHING 2 COIL,12V","NAIS","DS2Y-SL2-DC12V","A0003","","","","","DPDT","220VDC 250VAC","2A","12V","LATCHING 2 COIL","",""
 "f3cf453a-00cd-4607-a2f0-879833dcc2aa","","","","","RELAY","OMRON","G6K-2F 12V","A0001, A0046, A0016","","","","","","","","","","",""
 "c36caae4-72eb-4397-afa5-8d3150503bdc","","","","","RELAY","TAKAMISAWA","MZ-12HG-C","A0030","","","","","","","","","","",""
 "a0b22350-43ea-4d48-838c-3be15a1ae6bd","","","","","RELAY","NAIS","TQ2-5V","A0038","","","","","","","","","","",""
@@ -30,4 +30,3 @@
 "0f166bc1-4a20-49f4-b257-b4c6438f2bb8","","","","","RELAY","OMRON","G6A-234P-ST-US 5V","A0808, A0810","","","","","","","","","","",""
 "fc2cae3a-85b1-47c1-92c8-90c900c7eade","","","","","RELAY","AROMAT","DS2E-S-DC12V","A0809","","","","","","","","","","",""
 "2c6ea821-54ed-406f-9fca-cb9d3f26cabb","","","","","RELAY","TE","6-1462000-2","A0603","","","","","","","","","","",""
-"1984e00e-44dd-4bf3-b635-0a234dd974d0","","","","","RELAY","SCHRACK","RY530024","A1019 A1020","","","","","","","","","","",""
