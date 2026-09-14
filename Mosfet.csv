@@ -1,5 +1,4 @@
 "Index","Library Ref","Library Path","Footprint Ref","Footprint Path","Description","Manufacturer 1","Manufacturer Part Number 1","Location","LCSC","Digikey","Mouser","TME","JAMECO","Package","Ids","Vds","MOSType","GenericName","Mounting"
-"41153b2e-8752-40da-a18f-f5a4e87fa89d","","","","","MOS,P-CH,12V,7.1A,SI2333CDS-T1-GE3,SOT23,SMD","SILICONIX","SI2333CDS-T1-GE3","R34","","","","","","SOT23","7.1A","12V","P-CH","SI2333CDS-T1-GE3","SMD"
 "33f8b539-64aa-4b3f-a1b0-557cfd7a0b2c","","","","","MOS,P-CH,50V,0.13A,BSS84,SOT23,SMD","NXP","BSS84","R136","","","","","","SOT23","0.13A","50V","P-CH","BSS84","SMD"
 "07eb7f7a-dfe1-4cec-b809-687485647542","","","","","MOS,P-CH,12V,4.3A,IRLML6401,SOT23,SMD","INFINEON","IRLML6401","R216","","","","","","SOT23","4.3A","12V","P-CH","IRLML6401","SMD"
 "f207628d-efe5-4b4c-840a-2ca39b4af4b1","","","","","MOS,N-CH,60V,0.25A,2N7002,SOT23,SMD","ONSEMI","2N7002","R212, R357, R358, R359, 360","","","","","","SOT23","0.25A","60V","N-CH","2N7002","SMD"
