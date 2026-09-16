@@ -555,7 +555,8 @@
         {
           "column": "Location",
           "transforms": [
-            "upper"
+            "upper",
+            "stripspaces"
           ]
         },
         {
