@@ -1,5 +1,5 @@
 "Index","Library Ref","Library Path","Footprint Ref","Footprint Path","Description","Manufacturer 1","Manufacturer Part Number 1","Location","LCSC","Digikey","Mouser","TME","JAMECO","Package","If","Color","LEDtype","Supplier","Supplier PartNo","GenericName","Mounting"
-"7915775c-bb19-429b-b5b0-ca3b72f56de2","",".\SCHLIB\DIODES.SCHLIB","","","LED,RED/GREEN,SOT23","LITEON","LTL907HK-TA","R4, R5, R6, R7, R8","","","","","","SOT23","","RED/GREEN","SOT23","","","",""
+"7915775c-bb19-429b-b5b0-ca3b72f56de2","",".\SCHLIB\DIODES.SCHLIB","","","LED,RED/GREEN,SOT23","LITEON","LTL907HK-TA","R4, R5, R6, R6, R7, R8","","","","","","SOT23","","RED/GREEN","SOT23","","","",""
 "cfe7345f-1c09-474b-9a9d-305e45c1b771","DIODE-LED-WHITE-KA",".\SCHLIB\DIODES.SCHLIB","","","LED,WHITE,2835","CREE","JB2835 3-V","R137","","","","","","2835","","WHITE","2835","","","",""
 "53e20f47-8efa-4a4f-bfed-f79ad615ab63","DIODE-LED-GREEN-KA",".\SCHLIB\DIODES.SCHLIB","","","LED,GREEN,PLCC2","","","R289","","","","","","PLCC2","","GREEN","PLCC2","","","",""
 "83a9d24c-70bf-49be-9291-ceb7c82e30a9","DIODE-LED-YELLOW-KA",".\SCHLIB\DIODES.SCHLIB","","","LED,YELLOW,PLCC2","","","R290, R291, R292","","","","","","PLCC2","","YELLOW","PLCC2","","","",""
