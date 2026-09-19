@@ -640,6 +640,13 @@
           ]
         },
         {
+          "column": "Manufacturer Part Number 1",
+          "transforms": [
+            "upper",
+            "trim"
+          ]
+        },
+        {
           "column": "Location",
           "transforms": [
             "upper",
@@ -737,11 +744,12 @@
         "target": "Description",
         "sources": [
           "\"CONNECTOR\"",
-          "Features",
+          "mounting",
+          "contype",
           "Pinout",
           "Pitch",
           "Color",
-          "CONtype"
+          "features"
         ],
         "separator": ",",
         "skipEmpty": true
