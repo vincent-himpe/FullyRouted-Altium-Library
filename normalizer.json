@@ -50,7 +50,8 @@
           "column": "Location",
           "transforms": [
             "upper",
-            "trim"
+            "trim",
+            "stripspaces"
           ]
         },
         {
@@ -336,7 +337,8 @@
           "column": "Location",
           "transforms": [
             "upper",
-            "trim"
+            "trim",
+            "stripspaces"
           ]
         },
         {
@@ -1481,7 +1483,8 @@
           "column": "Location",
           "transforms": [
             "upper",
-            "trim"
+            "trim",
+            "stripspaces"
           ]
         },
         {
