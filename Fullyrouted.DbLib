@@ -1,0 +1,439 @@
+[OutputDatabaseLinkFile]
+Version=1.1
+[DatabaseLinks]
+ConnectionString=Provider=MSDASQL.1;Persist Security Info=False;Data Source=Fullyrouted
+AddMode=3
+RemoveMode=1
+UpdateMode=2
+ViewMode=0
+LeftQuote=[
+RightQuote=]
+QuoteTableNames=1
+UseTableSchemaName=0
+DefaultColumnType=VARCHAR(255)
+LibraryDatabaseType=
+LibraryDatabasePath=
+DatabasePathRelative=0
+TopPanelCollapsed=0
+LibrarySearchPath=
+OrcadMultiValueDelimiter=,
+SearchSubDirectories=0
+SchemaName=ALTIUM
+LastFocusedTable=AUDIO.CSV
+[Table1]
+SchemaName=
+TableName=AUDIO.CSV
+Enabled=True
+UserWhere=0
+UserWhereText=[INDEX] = '{INDEX}'
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=220|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=291|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=76|LCSC0=48|DIGIKEY0=72|MOUSER0=69|TME0=44|PACKAGE0=70|VOLTAGE0=70|AUDIOTYPE0=180
+[Table2]
+SchemaName=
+TableName=Batteries.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=223|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=230|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=76|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=65|JAMECO0=66|PACKAGE0=74|VOLTAGE0=70|POWER0=62|CAPACITY0=70|CHEMISTRY0=80
+[Table3]
+SchemaName=
+TableName=Batteries.txt
+Enabled=False
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=10=29|NoName0=67|NoName_10=78|NoName_20=78|NoName_30=78|NoName_40=78|FDK0=69|CR14250SE0=79|NoName_50=78|NoName_60=78|3V0=36|NoName_70=78|NoName_80=78|NoName_90=78|A08560=54|NoName_100=84|NoName_110=84|LITHIUM0=65
+[Table4]
+SchemaName=
+TableName=Capacitors.txt
+Enabled=False
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=10=29|CAP, CER, 1uF, X5R, 10V, 08050=239|CAPC08050=74|#\SCHLIB\PASSIVES#SCHLIB0=164|CAPC0805_10=130|NoName0=67|KYOCERA0=149|0805ZC105KAT4A0=130|08050=112|NoName_10=78|1uF0=45|X5R0=42|10V0=48|CER0=63|NoName_20=78|NoName_30=78|R9, TO R230=126|X5R_10=53
+[Table5]
+SchemaName=
+TableName=Connectors.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=222|LIBRARY REF0=93|LIBRARY PATH0=215|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=298|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=196|LOCATION0=150|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|JAMECO0=66|FEATURES0=74|PINOUT0=62|PITCH0=52|MOUNTING0=83|CONTYPE0=115|COLOR0=60|PACKAGE0=136|SUPPLIER0=70|SUPPLIER PARTNO0=115|OLDDESCRIPTION0=263
+[Table6]
+SchemaName=
+TableName=Connectors.txt
+Enabled=False
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=10=29|CONN, IC SOCKET, DIP8, 0#1in PITCH, 0#15in SPAN0=280|CONN-ICSOCKET0=108|#\SCHLIB\CONNECTORS-GENERIC#SCHLIB0=238|NoName0=67|NoName_10=78|ADAM TECH0=84|ICS-308-T0=196|DIP80=136|NoName_20=78|NoName_30=78|TH0=36|8P0=37|NoName_40=78|NoName_50=91|MARS360=150
+[Table7]
+SchemaName=
+TableName=Crystals.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=221|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=200|MANUFACTURER 10=123|MANUFACTURER PART NUMBER 10=195|LOCATION0=224|LCSC0=48|DIGIKEY0=90|MOUSER0=69|TME0=44|PACKAGE0=70|FREQUENCY0=84|TEMPCO0=66|MOUNTING0=82|XTALTYPE0=71
+[Table8]
+SchemaName=
+TableName=Crystals.txt
+Enabled=False
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=10=29|CRYSTAL, 25MHz, CTS, ATS250BSM-1, HC49/US0=329|NoName0=67|NoName_10=78|NoName_20=78|NoName_30=78|CTS0=60|ATS250BSM-10=154|HC49/US0=68|NoName_40=78|25MHz0=71|NoName_50=78|NoName_60=78|NoName_70=90|R950=224
+[Table9]
+SchemaName=
+TableName=Diodes.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=222|LIBRARY REF0=157|LIBRARY PATH0=134|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=371|MANUFACTURER 10=149|MANUFACTURER PART NUMBER 10=195|LOCATION0=257|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|JAMECO0=66|VR0=39|IF0=42|POWER0=62|PACKAGE0=70|DIOTYPE0=177|GENERICNAME0=106|MOUNTING0=82|REMARKS0=140
+[Table10]
+SchemaName=
+TableName=Diodes.txt
+Enabled=False
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=F10=35|F20=454|F30=157|F40=134|F50=59|F60=35|F70=149|F80=106|F90=62|F100=61|F110=46|F120=41|F130=41|F140=177|F150=51|F160=50|F170=41|F180=157|F190=46|F200=41
+[Table11]
+SchemaName=
+TableName=Display.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=216|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=223|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=76|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|PACKAGE0=70|DISPLAY TYPE0=133|CHARACTERS0=90|GENERICNAME0=99
+[Table12]
+SchemaName=
+TableName=Display.txt
+Enabled=False
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=F10=35|F20=35|F30=35|F40=35|F50=35|F60=35|F70=70|F80=112|F90=35|F100=41|F110=57|F120=41|F130=41|F140=41|F150=41
+[Table13]
+SchemaName=
+TableName=FerriteBead.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=219|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=143|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=77|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|JAMECO0=66|IMPEDANCE0=84|ISAT0=44|PACKAGE0=70
+[Table14]
+SchemaName=
+TableName=FerriteBead.txt
+Enabled=False
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=F10=35|F20=35|F30=35|F40=35|F50=35|F60=35|F70=55|F80=76|F90=61|F100=41|F110=41|F120=41|F130=41|F140=41|F150=77
+[Table15]
+SchemaName=
+TableName=Fuses.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=221|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=268|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=335|LCSC0=51|DIGIKEY0=62|MOUSER0=81|TME0=44|CURRENT (HOLD)0=110|CURRENT (BREAK)0=113|VOLTAGE0=70|PACKAGE0=123|GENERICNAME0=99|FUSETYPE0=79|MOUNTING0=82
+[Table16]
+SchemaName=
+TableName=Inductors.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=218|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=226|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=76|LCSC0=51|DIGIKEY0=99|MOUSER0=69|TME0=99|PACKAGE0=70|ISAT0=44|INDUCTANCE0=90|INDTYPE0=64|SHIELDING0=87|MOUNTING0=82
+[Table17]
+SchemaName=
+TableName=LED.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=222|LIBRARY REF0=144|LIBRARY PATH0=134|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=148|MANUFACTURER 10=119|MANUFACTURER PART NUMBER 10=195|LOCATION0=188|LCSC0=51|DIGIKEY0=68|MOUSER0=69|TME0=44|JAMECO0=66|PACKAGE0=126|IF0=32|COLOR0=118|LEDTYPE0=64|SUPPLIER0=70|SUPPLIER PARTNO0=115|GENERICNAME0=99|MOUNTING0=82
+[Table18]
+SchemaName=
+TableName=MODULES.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=215|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=274|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=76|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|FUNCTION0=136
+[Table19]
+SchemaName=
+TableName=Mechanical.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=221|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=320|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=90|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|MECHTYPE0=176|JAMECO0=66|PACKAGE0=70|MOUNTING0=82
+[Table20]
+SchemaName=
+TableName=OPTOCOUPLERS.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=220|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=198|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=76|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|OUTPUT0=64|INPUT0=53|CHANNELS0=78|MOUNTING0=82|PACKAGE0=70
+[Table21]
+SchemaName=
+TableName=Relay.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=221|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=364|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=150|LCSC0=48|DIGIKEY0=146|MOUSER0=69|TME0=44|RELAYTYPE0=75|CONTACT-VOLTAGE0=122|CONTACT-CURRENT0=123|COIL-VOLTAGE0=98|LATCHING0=95|MOUNTING0=82|PACKAGE0=70|CONTACT-STYLE0=102|ACTIVE0=61
+[Table22]
+SchemaName=
+TableName=Switch.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=225|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=550|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=187|LCSC0=51|DIGIKEY0=76|MOUSER0=69|TME0=44|SWITCHTYPE0=85|PACKAGE0=186|FEATURES0=261|MOUNTING0=82|VOLTAGE0=70
+[Table23]
+SchemaName=
+TableName=Thermal.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=215|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=177|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=76|LCSC0=48|DIGIKEY0=62|MOUSER0=69|TME0=44|MANUFACTURER0=109|MANUFACTURER PARTNO0=154|PACKAGE0=70|AEC-Q0=55|MOUNTING0=82|CONTYPE0=69|PINOUT0=62|SUPPLIER0=70|SUPPLIER PARTNO0=115
+[Table24]
+SchemaName=
+TableName=Transistors.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=224|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=326|MANUFACTURER 10=156|MANUFACTURER PART NUMBER 10=195|LOCATION0=341|LCSC0=48|DIGIKEY0=84|MOUSER0=69|TME0=44|JAMECO0=66|PACKAGE0=70|SUPPLIER0=134|SUPPLIER PARTNO0=115|VCEO-VDS0=77|IC-IDS0=54|GENERICNAME0=116|TRANSISTORTYPE0=108|MOUNTING0=82
+[Table25]
+SchemaName=
+TableName=capacitors.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=222|LIBRARY REF0=86|LIBRARY PATH0=141|FOOTPRINT REF0=130|FOOTPRINT PATH0=110|DESCRIPTION0=286|MANUFACTURER 10=149|MANUFACTURER PART NUMBER 10=195|LOCATION0=329|LCSC0=48|DIGIKEY0=160|MOUSER0=94|TME0=44|VALUE0=56|VOLTAGE0=70|DIELECTRIC0=80|NoName0=67|JAMECO0=66|PACKAGE0=112|CAPTYPE0=65
+[Table26]
+SchemaName=
+TableName=claudetrial.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=222|LIBRARY REF0=144|LIBRARY PATH0=134|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=148|MANUFACTURER 10=119|MANUFACTURER PART NUMBER 10=195|LOCATION0=188|LCSC0=51|DIGIKEY0=68|MOUSER0=69|TME0=44|JAMECO0=66|PACKAGE0=126|IF0=32|COLOR0=118|LEDTYPE0=64|SUPPLIER0=70|SUPPLIER PARTNO0=115|GENERICNAME0=99|MOUNTING0=82
+[Table27]
+SchemaName=
+TableName=ic.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=225|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=344|MANUFACTURER 10=156|MANUFACTURER PART NUMBER 10=195|LOCATION0=413|LCSC0=51|DIGIKEY0=90|MOUSER0=69|TME0=44|Function0=69|PACKAGE0=125|NoName0=67|NoName_10=78|JAMECO0=66|GENERICNAME0=148|ICTYPE0=236|MOUNTING0=82
+[Table28]
+SchemaName=
+TableName=mosfet.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=220|LIBRARY REF0=86|LIBRARY PATH0=93|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=306|MANUFACTURER 10=118|MANUFACTURER PART NUMBER 10=195|LOCATION0=150|LCSC0=48|DIGIKEY0=109|MOUSER0=69|TME0=44|Id0=33|VDS0=44|Vgs(th)0=59|NoName0=67|JAMECO0=66|PACKAGE0=70|IDS0=40|MOSTYPE0=70|GENERICNAME0=125|MOUNTING0=82
+[Table29]
+SchemaName=
+TableName=resistors.csv
+Enabled=True
+UserWhere=0
+UserWhereText=
+BrowserOrder_Sorting=
+BrowserOrder_Grouping=
+BrowserOrder_Visible=INDEX0=223|LIBRARY REF0=86|LIBRARY PATH0=141|FOOTPRINT REF0=103|FOOTPRINT PATH0=110|DESCRIPTION0=227|MANUFACTURER 10=188|MANUFACTURER PART NUMBER 10=256|LOCATION0=366|LCSC0=48|DIGIKEY0=109|MOUSER0=69|TME0=44|Value0=52|TOLERANCE0=83|Power0=55|TEMPCO0=66|JAMECO0=66|PACKAGE0=95|RESISTANCE0=84|VOLTAGE0=70|RESTYPE0=102|WATTAGE0=72
+[FieldMap1]
+Options=FieldName=AUDIO.CSV.INDEX|TableNameOnly=AUDIO.CSV|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap2]
+Options=FieldName=AUDIO.CSV.LIBRARY REF|TableNameOnly=AUDIO.CSV|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap3]
+Options=FieldName=AUDIO.CSV.LIBRARY PATH|TableNameOnly=AUDIO.CSV|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap4]
+Options=FieldName=Batteries.csv.INDEX|TableNameOnly=Batteries.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap5]
+Options=FieldName=Batteries.csv.LIBRARY REF|TableNameOnly=Batteries.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap6]
+Options=FieldName=Batteries.csv.LIBRARY PATH|TableNameOnly=Batteries.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap7]
+Options=FieldName=Connectors.csv.INDEX|TableNameOnly=Connectors.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap8]
+Options=FieldName=Connectors.csv.LIBRARY REF|TableNameOnly=Connectors.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap9]
+Options=FieldName=Connectors.csv.LIBRARY PATH|TableNameOnly=Connectors.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap10]
+Options=FieldName=Crystals.csv.INDEX|TableNameOnly=Crystals.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap11]
+Options=FieldName=Crystals.csv.LIBRARY REF|TableNameOnly=Crystals.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap12]
+Options=FieldName=Crystals.csv.LIBRARY PATH|TableNameOnly=Crystals.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap13]
+Options=FieldName=Diodes.csv.INDEX|TableNameOnly=Diodes.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap14]
+Options=FieldName=Diodes.csv.LIBRARY REF|TableNameOnly=Diodes.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap15]
+Options=FieldName=Diodes.csv.LIBRARY PATH|TableNameOnly=Diodes.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap16]
+Options=FieldName=Display.csv.INDEX|TableNameOnly=Display.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap17]
+Options=FieldName=Display.csv.LIBRARY REF|TableNameOnly=Display.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap18]
+Options=FieldName=Display.csv.LIBRARY PATH|TableNameOnly=Display.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap19]
+Options=FieldName=FerriteBead.csv.INDEX|TableNameOnly=FerriteBead.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap20]
+Options=FieldName=FerriteBead.csv.LIBRARY REF|TableNameOnly=FerriteBead.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap21]
+Options=FieldName=FerriteBead.csv.LIBRARY PATH|TableNameOnly=FerriteBead.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap22]
+Options=FieldName=Fuses.csv.INDEX|TableNameOnly=Fuses.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap23]
+Options=FieldName=Fuses.csv.LIBRARY REF|TableNameOnly=Fuses.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap24]
+Options=FieldName=Fuses.csv.LIBRARY PATH|TableNameOnly=Fuses.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap25]
+Options=FieldName=Inductors.csv.INDEX|TableNameOnly=Inductors.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap26]
+Options=FieldName=Inductors.csv.LIBRARY REF|TableNameOnly=Inductors.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap27]
+Options=FieldName=Inductors.csv.LIBRARY PATH|TableNameOnly=Inductors.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap28]
+Options=FieldName=LED.csv.INDEX|TableNameOnly=LED.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap29]
+Options=FieldName=LED.csv.LIBRARY REF|TableNameOnly=LED.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap30]
+Options=FieldName=LED.csv.LIBRARY PATH|TableNameOnly=LED.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap31]
+Options=FieldName=MODULES.csv.INDEX|TableNameOnly=MODULES.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap32]
+Options=FieldName=MODULES.csv.LIBRARY REF|TableNameOnly=MODULES.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap33]
+Options=FieldName=MODULES.csv.LIBRARY PATH|TableNameOnly=MODULES.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap34]
+Options=FieldName=Mechanical.csv.INDEX|TableNameOnly=Mechanical.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap35]
+Options=FieldName=Mechanical.csv.LIBRARY REF|TableNameOnly=Mechanical.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap36]
+Options=FieldName=Mechanical.csv.LIBRARY PATH|TableNameOnly=Mechanical.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap37]
+Options=FieldName=OPTOCOUPLERS.csv.INDEX|TableNameOnly=OPTOCOUPLERS.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap38]
+Options=FieldName=OPTOCOUPLERS.csv.LIBRARY REF|TableNameOnly=OPTOCOUPLERS.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap39]
+Options=FieldName=OPTOCOUPLERS.csv.LIBRARY PATH|TableNameOnly=OPTOCOUPLERS.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap40]
+Options=FieldName=Relay.csv.INDEX|TableNameOnly=Relay.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap41]
+Options=FieldName=Relay.csv.LIBRARY REF|TableNameOnly=Relay.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap42]
+Options=FieldName=Relay.csv.LIBRARY PATH|TableNameOnly=Relay.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap43]
+Options=FieldName=Switch.csv.INDEX|TableNameOnly=Switch.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap44]
+Options=FieldName=Switch.csv.LIBRARY REF|TableNameOnly=Switch.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap45]
+Options=FieldName=Switch.csv.LIBRARY PATH|TableNameOnly=Switch.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap46]
+Options=FieldName=Thermal.csv.INDEX|TableNameOnly=Thermal.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap47]
+Options=FieldName=Thermal.csv.LIBRARY REF|TableNameOnly=Thermal.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap48]
+Options=FieldName=Thermal.csv.LIBRARY PATH|TableNameOnly=Thermal.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap49]
+Options=FieldName=Transistors.csv.INDEX|TableNameOnly=Transistors.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap50]
+Options=FieldName=Transistors.csv.LIBRARY REF|TableNameOnly=Transistors.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap51]
+Options=FieldName=Transistors.csv.LIBRARY PATH|TableNameOnly=Transistors.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap52]
+Options=FieldName=capacitors.csv.Index|TableNameOnly=capacitors.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap53]
+Options=FieldName=capacitors.csv.Library Ref|TableNameOnly=capacitors.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap54]
+Options=FieldName=capacitors.csv.Library Path|TableNameOnly=capacitors.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap55]
+Options=FieldName=capacitors.csv.Footprint Ref|TableNameOnly=capacitors.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap56]
+Options=FieldName=capacitors.csv.Footprint Path|TableNameOnly=capacitors.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap57]
+Options=FieldName=capacitors.csv.Description|TableNameOnly=capacitors.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap58]
+Options=FieldName=claudetrial.csv.INDEX|TableNameOnly=claudetrial.csv|FieldNameOnly=INDEX|FieldType=0|ParameterName=INDEX|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap59]
+Options=FieldName=claudetrial.csv.LIBRARY REF|TableNameOnly=claudetrial.csv|FieldNameOnly=LIBRARY REF|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap60]
+Options=FieldName=claudetrial.csv.LIBRARY PATH|TableNameOnly=claudetrial.csv|FieldNameOnly=LIBRARY PATH|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap61]
+Options=FieldName=ic.csv.Index|TableNameOnly=ic.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap62]
+Options=FieldName=ic.csv.Library Ref|TableNameOnly=ic.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap63]
+Options=FieldName=ic.csv.Library Path|TableNameOnly=ic.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap64]
+Options=FieldName=ic.csv.Footprint Ref|TableNameOnly=ic.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap65]
+Options=FieldName=ic.csv.Footprint Path|TableNameOnly=ic.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap66]
+Options=FieldName=ic.csv.Description|TableNameOnly=ic.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap67]
+Options=FieldName=mosfet.csv.Index|TableNameOnly=mosfet.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap68]
+Options=FieldName=mosfet.csv.Library Ref|TableNameOnly=mosfet.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap69]
+Options=FieldName=mosfet.csv.Library Path|TableNameOnly=mosfet.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap70]
+Options=FieldName=mosfet.csv.Footprint Ref|TableNameOnly=mosfet.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap71]
+Options=FieldName=mosfet.csv.Footprint Path|TableNameOnly=mosfet.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap72]
+Options=FieldName=mosfet.csv.Description|TableNameOnly=mosfet.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap73]
+Options=FieldName=resistors.csv.Index|TableNameOnly=resistors.csv|FieldNameOnly=Index|FieldType=0|ParameterName=Index|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap74]
+Options=FieldName=resistors.csv.Library Ref|TableNameOnly=resistors.csv|FieldNameOnly=Library Ref|FieldType=1|ParameterName=[Library Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap75]
+Options=FieldName=resistors.csv.Library Path|TableNameOnly=resistors.csv|FieldNameOnly=Library Path|FieldType=1|ParameterName=[Library Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap76]
+Options=FieldName=resistors.csv.Footprint Ref|TableNameOnly=resistors.csv|FieldNameOnly=Footprint Ref|FieldType=1|ParameterName=[Footprint Ref]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap77]
+Options=FieldName=resistors.csv.Footprint Path|TableNameOnly=resistors.csv|FieldNameOnly=Footprint Path|FieldType=1|ParameterName=[Footprint Path]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
+[FieldMap78]
+Options=FieldName=resistors.csv.Description|TableNameOnly=resistors.csv|FieldNameOnly=Description|FieldType=1|ParameterName=[Description]|VisibleOnAdd=False|AddMode=0|RemoveMode=0|UpdateMode=0
